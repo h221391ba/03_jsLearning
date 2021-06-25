@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+    <style>
+        h1 span{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <button id="getContent">get content</button>
+    <button id="btn">change content</button>
+    <h1>Hello <span>world!</span></h1>
+    <script>
+
+        
+        let btn=document.querySelector("#btn")
+        let getContent=document.querySelector("#getContent")
+        getContent.onclick=function(){
+        // let h1Content=document.querySelector("h1").textContent;
+            // let h1Content=document.querySelector("h1").innerText;
+            let h1Content=document.querySelector("h1").innerHTML;
+
+            console.log(h1Content)
+        }
+
+        btn.onclick=function(){
+            // document.querySelector("h1").textContent="new content"
+            // document.querySelector("h1").innerText="new content"
+            document.querySelector("h1").innerHTML="new <span>content</span>"
+
+
+        }
+    </script>
+</body>
+</html>

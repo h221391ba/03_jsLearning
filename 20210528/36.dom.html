@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            margin:10px;
+            background: pink;
+        }
+        .d-flex{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>hello world</h1>
+        <!-- <button id="btn" onclick="call()">click</button> -->
+        <button id="btn">click</button>
+        <!-- <button id="btn">click 2</button> -->
+
+        <article>
+            <p>this is p</p>
+            <p>this is p2</p>
+            <div class="d-flex">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box box2"></div>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        alert("hello world")
+        let btn=document.getElementById("btn")
+        function call(){
+            alert("hi")
+        }
+        console.log(btn)
+        btn.onclick=function(){
+            // alert("hi")
+            console.log("click")
+        }
+        btn.onmouseenter=function(){
+            console.log("mouse enter")
+        }
+
+        let p=document.getElementsByTagName("p")
+        console.log(p)
+        for(let i=0; i<p.length; i++){
+            p[i].onclick=function(){
+                console.log("p click "+i)
+            }
+        }
+
+        let box=document.getElementsByClassName("box")
+        for(let j=0; j<box.length; j++){
+            box[j].onclick=function(){
+                console.log("box")
+            }
+        }
+        let box2=document.getElementsByClassName("box2")
+        box2[0].onclick=function(){
+            console.log("click box2")
+        }
+
+        let h1=document.querySelector("h1")
+        h1.onclick=function(){
+            console.log("h1")
+        }
+        let btn=document.querySelector("#btn")
+        btn.onclick=function(){
+            console.log("id btn")
+        }
+        let box=document.querySelector(".box")
+        box.onclick=function(){
+            console.log("box click")
+        }
+        let boxes=document.querySelectorAll(".box")
+        for(let k=0;k<boxes.length;k++){
+            boxes[k].onclick=function(){
+                console.log('box '+k)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object modify</title>
+</head>
+<body>
+    
+    <script>
+        let users = [
+            {
+                name: "Tom",
+                age: 19,
+                email: "tom@test.com",
+                gender: "male",
+                favorite: "apple"
+            },
+            {
+                name: "May",
+                age: 14,
+                email: "may@test.com",
+                gender: "female",
+                favorite: "banana"
+            },
+            {
+                name: "Joe",
+                age: 22,
+                email: "joe@test.com",
+                gender: "male",
+                favorite: "banana"
+
+            },
+            {
+                name: "Sarah",
+                age: 26,
+                email: "sarah@test.com",
+                gender: "female",
+                favorite: "melon"
+            }
+        ];
+
+        let userAdault=[];
+        users.forEach(function(user, index){
+            // if(user.age>=18){
+            //     userAdault.push(user)
+            // }
+            console.log(`${index}. ${user.name}'s age is ${user.age}.`)
+        })
+        // console.log(userAdault)
+
+        let userAdaultList=users.filter(function(user){
+            return user.age>=18;
+        })
+        console.log(userAdaultList)
+
+        //篩選出男生的資料 所有資料回傳成陣列
+        let userMale=users.filter(function(user){
+            return user.gender==="male";
+        })
+        console.log(userMale)
+
+        //回傳找到的第一筆資料 用途是尋找是否有符合格式的資料
+        let userFindMale=users.find(function(user){
+            return user.gender==="male";
+        })
+        console.log(userFindMale)
+
+        let A=[10,40,30, 36, 72];
+        // let B=[];
+        let B=A.map(function(item){
+            return item*2;
+        })
+        console.log(B)
+        
+        let ageThan20=users.map(function(user){ //map 的每筆資料都會回傳
+            if(user.age>20){
+                return user;
+            }
+            return false;
+        })
+        console.log(ageThan20)
+
+        let siteLocation=[{
+            name: "中央大學",
+            lat: 24.024,
+            lng: 124.234
+        },
+        {
+            name: "中原大學",
+            lat: 24.144,
+            lng: 124.254
+        }]
+
+        siteLocation.map(function(site){
+            //myLat=xxx, myLng=xxx  geolocation api
+            let distance=20;
+            site.distance=distance;
+            return site;
+        })
+        console.log(siteLocation)
+
+        let userLike=users.map(function(user){
+            return `${user.name} likes ${user.favorite}`;
+        })
+        console.log(userLike)
+    </script>
+</body>
+</html>

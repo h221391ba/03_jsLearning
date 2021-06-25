@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a, b){
+            return a + b;
+        }
+        console.log(add(2, 5));
+        console.log(add.call(null, 2, 5));
+        console.log(add.apply(null, [2, 5]));
+
+        function greet(){
+            var reply = [this.person, 'is an awesome', this.role].join(' ')
+            return reply;
+        }
+        let obj = {
+            person: "Tom",
+            role: "doctor"
+        }
+        console.log(greet.call(obj));
+
+        let objA = {
+            name: "A ",
+        };
+
+        let objB = {
+            name: "B",
+            writName: function(age){
+                return this.name + "is " + age + " years old.";
+            }
+        };
+
+        let func = objB.writName.bind(objA, 22);
+        console.log(func());
+        let func2 = objB.writName.bind(objA)
+        console.log(func2(33));
+        console.log(func2(15));
+    </script>
+</body>
+</html>

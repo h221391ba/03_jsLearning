@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function callName (name1 = "May", name2 = "Tom"){
+            // let name = "John";
+            console.log(`Hello,  ${name1}, I'm ${name2}.`);
+        }
+        callName("Tom", "May");
+        callName("John");
+
+        function functionName(name){
+            let greeting = `Hello, ${name}`;
+            // console.log(greeting);
+            return greeting;
+        }
+        let greeting = functionName("Tom");
+        console.log(greeting);
+
+        let varFunction = function(){
+            console.log("banana");
+        }
+        varFunction();
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            name:"Tom",
+            age: 19,
+            email: "sdf@mail.com",
+            "favorite-fruit": "apple",
+            favorite: {
+                friut: ["apple", "banana"],
+                hobby: ["b", "d", "g"]
+            },
+            certification: true,
+            laugh: function(){
+                console.log("hahaha");
+            },
+            sayhello(){
+                console.log(`Hello I'm ${this.name}.`);
+            },
+            watch(thing){
+                console.log(thing);
+            }
+        };
+        // user.name = "Tom";
+        // user.name = "May";
+
+        // console.log(user);
+        console.log(user.name);
+        console.log(user.favorite.friut);
+        console.log(user["age"]);
+        console.log(user["favorite"]["friut"]);
+        console.log(`${user.name}'s age ${user.age},likes fruit are ${user.favorite.friut}.`)
+        user.sayhello();
+
+
+
+        delete user.email;
+        console.log(user);
+
+        let school = null;
+        console.log(typeof school);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var</title>
+</head>
+<body>
+    <script>
+        // var a; //
+        // console.log("a",a)
+        // console.log("c",c)
+
+        var a=1;
+        var c=5;
+        var d=9;
+        // var a=5;
+        if(true){
+            var b=2;
+        }
+        function showVar(){ //函式作用域
+            var c=3;
+            d=12;
+            console.log("inside c", c)
+            console.log("inside d", d)
+        }
+        showVar()
+        
+        console.log("a", a)
+        console.log("b", b)
+        console.log("outside c", c)
+        console.log("outside d", d)
+
+
+    </script>
+</body>
+</html>

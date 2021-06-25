@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+
+<body>
+
+    <script>
+        // [1,2,3]
+        let users = [
+            {
+                name: "Tom",
+                age: 19,
+                email: "tom@test.com"
+            },
+            {
+                name: "May",
+                age: 14,
+                email: "may@test.com"
+            },
+            {
+                name: "Joe",
+                age: 22,
+                email: "joe@test.com"
+            }
+
+        ];
+
+        // console.log(users)
+        for(let i=0; i<users.length; i++){
+            // console.log(users[i])
+            // console.log(`${users[i].name}'s age is ${users[i].age}.`)
+        }
+
+        function showInfo(i){
+            console.log(`${users[i].name}'s age is ${users[i].age}.`)
+        }
+        // showInfo(2)
+
+        users.forEach(function(user){
+            console.log(`${user.name}'s age is ${user.age}.`)
+        })
+    </script>
+</body>
+
+</html>

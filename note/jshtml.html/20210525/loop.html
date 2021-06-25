@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let i = 1;
+        while (i <= 10){
+            console.log(i);
+            i++;
+        };
+
+        let j = 1;
+        do {
+            console.log("j", j);
+            j++;
+        }
+        while (j <= 10);
+
+        let a = 0;
+        for (let k = 1; k <= 10; k++){
+            a += k;
+            console.log(k);
+        }
+        console.log(a);
+
+        //長度需一致不然會有錯
+        let users = ["John", "Tom", "Jay", "May", "Sandy"];
+        let fruit = ["apple", "banana", "peach", "orange", "melon"];
+        for(let n = 0; n < fruit.length; n++){
+            console.log(`${users[n]} likes ${fruit[n]}.`);
+            // console.log(fruit[n]);
+        };
+
+        for (let a = 2, b = 3; a < 7; a++, b++){
+            console.log(`${a}+${b}=${a + b}`);
+        };
+
+        for (let x = 0; x < 7; x++){
+            console.log("x", x);
+            for (let y = 0; y < 7; y++){
+                console.log("y", y);
+            }
+        };
+
+    </script>
+</body>
+</html>

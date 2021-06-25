@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changePic</title>
+    <style>
+        figure{
+            text-align: center;
+        }
+        .d-flex{
+            display: flex;
+            justify-content: center;
+        }
+        .thumb{
+            width: 120px;
+            height: 120px;
+            border: 2px solid transparent;
+        }
+        .thumb img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .border {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <figure>
+        <img id="target" src="pic1.jpg" alt="">
+    </figure>
+    <div class="d-flex">
+        <div class="thumb"><img src="../20210528/pic1.jpg" alt=""></div>
+        <div class="thumb"><img src="../20210528/pic2.jpg" alt=""></div>
+        <div class="thumb"><img src="../20210528/pic3.jpg" alt=""></div>
+        <div class="thumb"><img src="../20210528/pic4.jpg" alt=""></div>
+        <div class="thumb"><img src="../20210528/pic5.jpg" alt=""></div>
+    </div>
+    <script>
+        let target=document.querySelector("#target")
+        // let thumbImg=document.querySelectorAll(".thumb img")
+        // for(let i=0; i<thumbImg.length; i++){
+        //     thumbImg[i].onclick=function(){
+        //         // console.log(i)
+        //         // let imgUrl=thumbImg[i].src;
+        //         let imgUrl=this.src;
+        //         // console.log(imgUrl)
+        //         target.src=imgUrl;
+        //     }
+        // }
+        
+
+        let thumb=document.querySelectorAll(".thumb")
+        for(let j=0; j<thumb.length; j++){
+            thumb[j].onclick=function(){
+                let imgUrl=this.childNodes[0].src;
+                for(let i = 0;i < thumb.length; i++) {
+                    thumb[i].classList.remove('border');
+                };
+                this.classList.add('border');
+                target.src=imgUrl;
+            }
+        };
+    </script>
+</body>
+</html>

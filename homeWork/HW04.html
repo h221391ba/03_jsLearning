@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW04</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .box {
+            margin: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            height: 100px;
+            background-color: rgba(230, 204, 255, .5);
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .inputBlock {
+            width: 300px;
+        }
+
+        .inputBlock input {
+            display: block;
+            margin: 10px 0px;
+            padding: 2px 5px;
+            height: 25px;
+            border-radius: 5px;
+        }
+
+        .outPut {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 247, 172);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .outPut h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0;
+            margin: 0;
+            color: rgb(201, 0, 0);
+            line-height: 50px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="inputBlock">
+            <label for="">請輸入一串數字，右側顯示最小數字</label>
+            <input type="text" id="inPut" placeholder="2,6,20,14">
+            <button class="send" id="send">送出</button>
+            <span id="alert" style="color: red"></span>
+        </div>
+        <div class="outPut">
+            <h1 id="outPut">min</h1>
+        </div>
+    </div>
+    <script>
+        // 設計一個 findMin 的 function，當傳入一串數字時，可以回傳最小的數字，例：findMin(2,6,20,14) 回傳 2
+
+        let inPut = document.querySelector('#inPut');
+        let send = document.querySelector('#send');
+        let outPut = document.querySelector('#outPut');
+        let alert = document.querySelector('#alert');
+        
+
+
+        findMin = (numbers) => {
+            return Math.min(...numbers);
+        }
+
+
+        send.addEventListener('click', function () {
+            let getNums = inPut.value.split(','),
+                numArr = [];
+            if(inPut.value) {
+                alert.innerText = '';
+                numArr = getNums.map(function (num) {
+                    return Number(num);
+                });
+                outPut.innerText = findMin(numArr);
+            }else{
+                alert.innerText = '請輸入數字';
+            };
+        });
+
+    </script>
+</body>
+
+</html>

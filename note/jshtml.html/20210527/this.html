@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const test = {
+            prop: 42,
+            func: function(){
+                return this.prop;
+            }
+        };
+        console.log(test.func());
+
+        this.a = 37;
+        console.log(window.a);
+        console.log(a);
+
+        var name = "john";
+        function callName(){
+            console.log(this.name);
+        }
+
+        var user = {
+            name: "Angela",
+            callName: callName
+        };
+        callName();
+    </script>
+</body>
+</html>

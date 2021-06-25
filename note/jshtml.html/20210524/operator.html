@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = 2, num2 = 5;
+        console.log(num1 + num2);
+        console.log(num1 - num2);
+        console.log(num1 * num2);
+        console.log(num1 / num2);
+        console.log(num1 % num2);
+
+        let temp = 10;
+        if (temp >= 31){
+            console.log("非常悶熱");
+        }else if (temp >= 27 && temp <= 30){
+            console.log("悶熱")
+        }else if (temp >= 20 && temp <= 26){
+            console.log("舒適")
+        }else if (temp >= 16 && temp <= 19){
+            console.log("稍有寒意")
+        }else if (temp >= 10 && temp <= 18){
+            console.log("寒冷")
+        }else{
+            console.log("非常寒冷");
+        };
+
+        let hot = false;
+        if (hot !== true){
+            console.log("cold!!");
+        }else{
+            console.log("hot!!");
+        };
+        
+        if (hot){
+            console.log("hot!!");
+        }else{
+            console.log("cold!!");
+        };
+
+        let n1 = 5, n2 = "5";
+        if (n1 == n2){
+            console.log("equal")
+        }else{
+            console.log("not equal")
+        };
+
+        if (n1 === n2){
+            console.log("equal")
+        }else{
+            console.log("not equal")
+        };
+
+        let user1 = "john";
+        if(user1 === "john" || user === "Amy" || user === "Tom"){
+            console.log("Hello!!");
+        };
+
+        let a =1;
+        a = a + 1;
+        console.log(a);
+        a += 1;
+        console.log(a);
+        a++;
+        console.log(a);
+        ++a;
+        console.log(a);
+        console.log(a++);
+        console.log(a);
+        console.log(++a);
+        console.log(a);
+
+        a += 2;
+        console.log(a);
+    </script>
+</body>
+</html>

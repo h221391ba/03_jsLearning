@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="num1">
+    <select name="" id="calu">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="num2">
+    <button id="count">=</button>
+    <span id="result">0</span>
+    <script>
+        let num1 = document.querySelector('#num1')
+        let num2 = document.querySelector('#num2')
+        let calu = document.querySelector('#calu')
+        let count = document.querySelector('#count')
+        let result = document.querySelector('#result')
+
+        count.addEventListener('click', function () {
+            let num1Value = Number(num1.value);
+            let num2Value = Number(num2.value);
+            let caluValue = calu.value;
+            let resultValue = 0;
+            // resule.innerText = num1Value + caluOperater + num2Value
+            switch (caluValue) {
+                case '+':
+                    resultValue = num1Value + num2Value;
+                    break;
+                case '-':
+                    resultValue = num1Value - num2Value;
+                    break;
+                case '*':
+                    resultValue = num1Value * num2Value;
+                    break;
+                case '/':
+                    resultValue = num1Value / num2Value;
+                    break;
+            };
+            result.innerText = resultValue;
+        })
+    </script>
+</body>
+
+</html>

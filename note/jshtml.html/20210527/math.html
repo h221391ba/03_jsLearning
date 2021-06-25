@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = 4.5622;
+        console.log(Math.round(num));
+        console.log(Math.ceil(num)); //無條件進位
+        console.log(Math.floor(num)); //無條捨去
+
+        console.log(Math.pow(2, 5));    //2的5次方
+        console.log(Math.sqrt(64));    //60的根號
+
+        console.log(Math.abs(-30));    //絕對值
+
+
+        let num2 = [25, 23, 56, 26, 47];
+        console.log(Math.max(25, 23, 26, 47, 56));    //最大值
+        console.log(Math.min(25, 23, 56, 26, 47));    //最小值
+        console.log(Math.min(...num2));    //一定要展開運算值才能做不然會NaN
+
+        //random 0-1 之間
+        console.log(Math.floor(Math.random() * 6)); //0-5間
+
+        let users = [
+            {
+                name: "Tom",
+                age: 19,
+                email: "ton@test.com"
+            },
+            {
+                name: "May",
+                age: 14,
+                email: "may@test.com"
+            },
+            {
+                name: "Joe",
+                age: 22,
+                email: "joe@test.com"
+            }
+        ];
+
+        function randomUser(){
+            let userIndex = Math.floor(Math.random() * users.length);
+            console.log(users[userIndex]);
+        }
+        randomUser();
+        
+
+
+        
+
+    </script>
+</body>
+</html>

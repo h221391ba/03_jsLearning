@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+</head>
+<body>
+    <button id="getAttr">get image</button>
+    <button id="setAttr">set image</button>
+
+    <div><img title="育成高中" src="pic1.jpg" alt="育成高中"></div>
+    <script>
+        let img=document.querySelector("img")
+        document.querySelector("#getAttr").onclick=function(){
+            // console.log("click")
+            let imgSrc=img.src;
+            let imgAlt=img.alt;
+            console.log(imgSrc, imgAlt)
+        }
+        document.querySelector("#setAttr").onclick=function(){
+            img.src="pic2.jpg"
+            img.alt="竹林高中"
+            img.title="竹林高中"
+
+        }
+    </script>
+</body>
+</html>

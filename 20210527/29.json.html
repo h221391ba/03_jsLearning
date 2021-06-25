@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+</head>
+<body>
+    
+    <script>
+        let users = [
+            {
+                name: "Tom",
+                age: 19,
+                email: "tom@test.com",
+                gender: "male",
+                favorite: "apple"
+            },
+            {
+                name: "May",
+                age: 14,
+                email: "may@test.com",
+                gender: "female",
+                favorite: "banana"
+            }
+        ];
+        console.log(users)
+        //web storage
+        let userString=JSON.stringify(users)
+        console.log(userString)
+        // console.log(userString[0].name)
+        let usersJson=JSON.parse(userString)
+        console.log(usersJson)
+
+    </script>
+</body>
+</html>

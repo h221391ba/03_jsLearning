@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button type="button" onclick="showMsg">button</button> -->
+    <button id="call" type="button">button</button>
+    <button id="remove" type="button">remove event</button>
+    <script>
+        // function showMsg() {
+        //     console.log('Hello');
+        // }
+
+        //dom0 事件
+        // let btn = document.querySelector('button');
+        // btn.onclick = function() {
+        //     console.log('dom0 click');
+        // }
+
+        // remove.onclick = function() {
+        //     btn.onclick = null;
+        // }
+
+        //dom2級事件處理
+        function showMsg() {
+            console.log('dom2 click');
+        }
+        btn.addEventListener('click', function(){
+            console.log('dom2 clicl');
+        })
+
+
+
+    </script>
+</body>
+</html>

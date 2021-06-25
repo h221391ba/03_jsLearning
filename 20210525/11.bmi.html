@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <script>
+        
+        /*
+            vue, angular, react
+            libray, framework
+        */
+        function countBmi(height=0, weight=0, name=""){
+            // let height=171, weight=60;
+            if(height===0){
+                console.log("身高不能為 0")
+                return;
+            }
+            let description="";
+            height=height/100;
+            let bmi=weight/Math.pow(height, 2)
+            bmi=Math.round(bmi*100)/100;
+            // console.log(bmi)
+            if(bmi<18.5){
+                description="過輕"
+            }else if(bmi>=18.5 && bmi<24){
+                description="正常"
+            }else if(bmi>=24 && bmi<27){
+                description="過胖"
+            }else if(bmi>=27 && bmi<30){
+                description="輕度肥胖"
+            }else if(bmi>=30 && bmi<35){
+                description="中度肥胖"
+            }else{
+                description="重度肥胖"
+            }
+            console.log(`${name} 的 BMI 是 ${bmi}, 標準是${description}`)
+        }
+        countBmi(171, 60, "John");
+        countBmi(180, 120, "Tom");
+        countBmi()
+
+        // countBmi(162, 45);
+
+    </script>
+</body>
+</html>

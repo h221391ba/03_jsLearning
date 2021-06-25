@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const input = 'As I was going to Saint Ives'
+        console.log('startsWith',input.startsWith('As '));
+        console.log('endsWith', input.endsWith('Ives'));
+        console.log(input.startsWith('going', 9));
+        console.log(input.endsWith('going', 14));
+        console.log('indexOf', input.indexOf('going'));
+        console.log('indexOf', input.indexOf('nope'));
+        console.log('indexOf', input.indexOf('going', 10));
+        console.log('includes', input.includes('going'));
+        console.log('includes', input.includes('nope'));
+        console.log('includes', input.includes('going', 10));
+
+        const output = input.replace('going', 'walking');
+        console.log(output);
+
+        const re1 = /going/;
+        const re2 = new RegExp('going');
+
+        console.log('match', input.match(re1));
+        console.log('search', input.search(re1));
+
+        console.log('test', re1.test(input));
+        console.log('exec', re1.exec(input));
+
+        const outputRegExp = input.replace(re1, 'walking')
+        console.log(outputRegExp);
+
+
+        const source = '階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）是一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。CSS 被分為不同等級：CSS1 現已廢棄， CSS2.1 是推薦標準， CSS3 分成多個小模組且正在標準化中。[來源請求]CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發中。';
+
+        //注意 replace()一個字串只取代一筆
+        //加了g可以所有取代
+        const sourceOutput = source.replace(/CSS/g, 'js');
+        console.log(sourceOutput);
+
+        // /CS./ CS.後接其他字元
+        const reCss = /CS./;
+        console.log('test source', reCss.test(source))
+
+        let phone = '0966123454';
+        let phone1 = '19661234546';
+        let phone2 = '09661234546123';
+        const mobileRef = /^09\d{8}$/;
+        console.log(mobileRef.test(phone));
+        console.log(mobileRef.test(phone1));
+        console.log(mobileRef.test(phone2));
+        
+
+    </script>
+</body>
+</html>

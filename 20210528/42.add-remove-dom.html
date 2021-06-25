@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add remove dom</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="target">
+        <button id="remove">remove</button>
+        <div class="box">
+
+        </div>
+    </div>
+    <!-- <button>click</button> -->
+    <script>
+        // let show=true;
+        let btn=document.createElement("button")
+        let content=document.createTextNode("click")
+        btn.appendChild(content)
+        let target=document.querySelector("#target")
+        target.appendChild(btn)
+
+        document.querySelector('#remove').onclick=function(){
+            document.querySelector(".box").remove()
+        }
+    </script>
+</body>
+</html>

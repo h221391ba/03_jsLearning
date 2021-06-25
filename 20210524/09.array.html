@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+
+    <script>
+        //同性質的東西寫在一個陣列裡
+        let user="John", user2="Tom", user3="Jay", user4="Tom", user5="May";
+        let users=["John", "Tom", "Jay", "May"];
+
+// ----------------------檢查與查看-----------------------------      
+
+        //印出陣列 log 整個陣列
+        console.log(users)
+
+        //陣列長度
+        console.log(users.length)
+
+        //index 0 的資料
+        console.log(users[0])
+        
+        //第4個是"Sue"
+        users[4]="Sue"
+        console.log(users)
+        console.log(users.length)
+        
+        //查看某個值是否存在於陣列中  (-1沒有 / 1有)
+        console.log(users.indexOf("Jay"))       //log 1
+        console.log(users.indexOf("Sam"))       //log -1
+
+        //迭代陣列 輸出陣列中所有東西
+        users.forEach(function(user){
+            console.log(user)
+        })
+
+
+// ----------------------加入與移除-----------------------
+
+        //插入新的值 在陣列最後面加入
+        users.push("Sarah");
+        console.log("push",users)
+
+        //移除值 從陣列最後面
+        users.pop();
+        console.log("pop",users)
+
+        //移除陣列第一個值
+        users.shift();
+        console.log("shift",users)
+
+        //從前面插入值
+        users.unshift("Jimmy");
+        console.log("unshift",users)
+
+        //從指定位置移除資料 2(含)之後移除1筆 若沒有寫第二個值則2(含)之後都移除 若第二個值寫0 則移除0筆資料
+        users.splice(2, 1, "Joe", "Adam")
+        console.log("splice",users)
+    
+//-----------陣列複製與結合 產生------------------------------        
+
+        //複製陣列
+        let newUsers=users.slice(2,4);
+        console.log("slice",newUsers)
+
+        //陣列結合
+        let arr=["a", "b", "c"];
+        let arr2=["d","e","f"]
+        let arr3=arr.concat(arr2)
+        console.log(arr3)
+
+        //以空白字串切割字串成為陣列
+        let str = 'The quick brown fox jumps over the lazy dog.';
+        let words = str.split(' ');
+        console.log(words)
+
+        //空字串也能拆成為字串
+        let str2="今天下雨了真好";
+        let words2=str2.split("")
+        console.log(words2)
+
+        //陣列拆開連成字串
+        let strArr=arr.join("");
+        console.log(strArr)
+
+        //可以決定資料轉成字串時可以決定間隔內容
+        let words2Arr=words2.join("...")
+        console.log(words2Arr)
+
+        //排序 依照unicode排
+        users.sort();
+        console.log("sort", users);
+
+        //翻轉陣列內容
+        console.log("reverse", users.reverse());
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validate</title>
+    <style>
+        .py-2{
+            padding: 10px 0;
+        }
+        .hint{
+            color:#666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <form action="target.html">
+        <div class="py-2">
+            <label for="account">帳號</label>
+            <input type="text" name="account" id="account" required minlength="4" maxlength="12">
+            <div class="hint">請輸入 4-12 字元的帳號</div>
+        </div>
+        <div class="py-2">
+            <label for="email">email</label>
+            <input type="email" name="email" id="email" required pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$">
+        </div>
+        <div class="py-2">
+            <label for="uniform-numbers">公司統編</label>
+            <input type="text" name="uniform-numbers" id="uniform-numbers" required pattern="\d{8}$">
+        </div>
+        <button id="send" type="submit">send</button>
+    </form>
+    <script>
+        const email=document.querySelector("#email")
+        const un=document.querySelector("#uniform-numbers")
+
+        email.addEventListener("blur", function(){
+            let s=this.validity;
+            let msg="";
+            //if else
+            switch(true){
+                case s.valueMissing:
+                    msg="請填入 email 帳號";
+                    break;
+                case s.patternMismatch:
+                    msg="請填入正確的 email 格式";
+                    break;
+            }
+            this.setCustomValidity(msg)
+        })
+        un.addEventListener("blur", function(){
+            let s=this.validity;
+            let msg="";
+            //if else
+            switch(true){
+                case s.valueMissing:
+                    msg="請填入公司統編";
+                    break;
+                case s.patternMismatch:
+                    msg="請填入正確的公司統編格式";
+                    break;
+            }
+            this.setCustomValidity(msg)
+        })
+    </script>
+</body>
+</html>

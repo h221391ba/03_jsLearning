@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW05</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
+            background-color: #ccc;
+            padding: 5px;
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: auto;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            margin-bottom: 3px;
+        }
+
+        .tabs a {
+            display: block;
+            padding: 15px 25px;
+            cursor: pointer;
+        }
+
+        .borderColor {
+            border-bottom: 5px solid red;
+        }
+
+        .tab-content {
+            height: calc(100vh - 74px) ;
+            padding: 30px 50px;
+            background-color: white;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="tabs" class="tabs">
+            <a class="borderColor">home</a>
+            <a>About</a>
+            <a>Contact</a>
+        </div>
+        <div id="tabsContent" class="tab-content">
+            <div class="page show">
+                this is home
+            </div>
+            <div class="page">
+                About me
+            </div>
+            <div class="page">
+                Contact us
+            </div>
+        </div>
+    </div>
+
+    <SCript>
+        let tabs = document.querySelector('#tabs');
+        let tabsContent = document.querySelector('#tabsContent');
+
+        for (let i = 0; i < tabs.children.length; i++) {
+            tabs.children[i].addEventListener('click', function () {
+                for (let i = 0; i < tabs.children.length; i++) {
+                    tabs.children[i].classList.remove('borderColor');
+                    tabsContent.children[i].classList.remove('show');
+                };
+                for (let i = 1; i < tabsContent.children.length; i++) {
+                    tabsContent.children[i].classList.add('page');
+                };
+                tabs.children[i].classList.add('borderColor');
+                tabsContent.children[i].classList.add('show');
+            });
+        };
+    </SCript>
+</body>
+
+</html>

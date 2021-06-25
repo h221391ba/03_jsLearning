@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = 1;
+        console.log(num);
+        console.log(num.toString());
+
+
+        let arr = [1, 2, 3];
+        console.log(arr);
+        console.log(arr.toString());
+
+
+        let inputValue = "2";
+        console.log(inputValue);
+        console.log(Number(inputValue));
+        inputValue = Number(inputValue);
+        console.log(inputValue);
+
+
+        let inputValue1 = "12.33333d44d555";
+        console.log(inputValue1);
+        console.log(Number(inputValue1));  //有不是數字的字元 log nan (not a number)
+        console.log(parseInt(inputValue1)); //自動去除非數字的字元,只會顯示整數
+        console.log(parseFloat(inputValue1));   //自動去除非數字的字元,會顯示小數但非數字以下不顯示
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call</title>
+</head>
+<body>
+    
+    <script>
+        function add(a, b){
+            return a+b;
+        }
+        //一般執行方式
+        console.log(add(2,5))
+
+        //call的方式執行 第一個值須填入物件 但是沒有物件則寫null
+        console.log(add.call(null, 2, 5))
+
+        //和call一樣差別只有參數是以陣列方式帶入
+        console.log(add.apply(null, [2, 5]))
+        
+
+        function greet(){
+            var reply=[this.person, 'is an awesome', this.role].join(' ')
+            return reply;
+        }
+        let obj={
+            person:"Tom",
+            role: "doctor"
+        }
+
+        //不必寫入參數用call即可以物件呼叫function
+        console.log(greet.call(obj))
+
+        var objA={
+            name: "A"
+        }
+        var objB={
+            name: "B",
+            writeName: function(age){
+                return this.name+" is "+age+" years old."
+            }
+        }
+
+        var func=objB.writeName.bind(objA,22 )
+        console.log(func())
+        // console.log(func(33))
+        var func2=objB.writeName.bind(objA)
+        console.log(func2(33))
+        console.log(func2(15))
+
+
+
+    </script>
+</body>
+</html>

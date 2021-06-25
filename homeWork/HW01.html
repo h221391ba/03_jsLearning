@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh- tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW01</title>
+</head>
+
+<body>
+    <div>
+        <label for="">請輸入數字</label>
+        <input id="input" type="text">
+        <button id="send">送出</button>
+    </div>
+    <script>
+        // 01. 設計一個 function，只要輸入一個數字就可以印出一個上下為一個 * ，最中間為輸入數字數目的* 的三角形，ex: 輸入 4 印出:
+        let input = document.querySelector('#input');
+        let send = document.querySelector('#send');
+
+        let func = (n) => {
+            let i;
+            let star = '';
+            for (i = 1; i <= n; i++) {
+                star = '*'.repeat(i);
+                console.log(star);
+            };
+            for (i = n - 1; i >= 1; i--) {
+                star = '*'.repeat(i);
+                console.log(star);
+            }
+        };
+
+        // func(2);
+
+        send.addEventListener('click', function(){
+            let getNum = Number(input.value);
+            console.log(getNum);
+            func (getNum);
+        })
+    </script>
+</body>
+
+</html>

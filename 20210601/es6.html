@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es6</title>
+</head>
+<body>
+    <script>
+        //展開運算子
+        // let number=[1,2,3,4,5]
+        // console.log(...number)
+        // let string="javascript"
+        // console.log(...string)
+
+        // let arr1=["hello", "js", "go"]
+        // let arr2=[1,2, ...arr1]
+        // console.log(arr2)
+
+        // function count(a,b,c){
+        //     return a+b+c;
+        // }
+        // let numbers=[2,5,7]
+        // console.log(count(...numbers))
+
+        //其餘運算子
+        // function sum(...numbers){
+        //     var result=0;
+        //     numbers.forEach((number)=>{
+        //         // console.log(number)
+        //         result+=number
+        //     })
+        //     return result;
+        // }
+        // console.log(sum(1))
+        // console.log(sum(1,3,5,7,9))
+
+        // function restArr(x, y, ...others){
+        //     console.log("x", x)
+        //     console.log("y", y)
+        //     console.log("others", others)
+        // }
+        // restArr(1,2,3,4,5)
+
+        // const [a, b]=[1, 2]
+        
+
+        let a,b;
+        [a,b]=[3,4]
+        console.log("a", a)
+        console.log("b", b)
+
+        const [c, , d]=[2,3,4]
+        console.log("c", c)
+        console.log("d", d)
+
+        const {user: x}={user: 5}
+        console.log("x", x)
+        
+
+
+
+    </script>
+</body>
+</html>

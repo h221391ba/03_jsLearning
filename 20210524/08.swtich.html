@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    
+    <script>
+        let light="blue";
+
+        // if(light==="yellow" || light==="orange"){
+        //     console.log("黃燈")
+        // }else if(){}
+        switch(light){
+            case "yellow":
+            case "orange":
+                console.log("黃燈");
+                break;
+            case "red":
+                console.log("紅燈");
+                break;
+            case "green":
+                console.log("綠燈");
+                break;
+            default: 
+                console.log("燈壞了");
+        }
+
+        let status=1; //狀態碼
+        switch(status){
+            case 0:  //case "登入失敗":  case "login fail":
+                
+                console.log("登入失敗");
+                break;
+            case 1:
+                console.log("登入成功");
+                break;
+
+        }
+    </script>
+</body>
+</html>

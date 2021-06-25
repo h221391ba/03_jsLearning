@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //班上有 A~J 十名同學，實作一函式隨機抽出兩個人
+        let student = [];
+        for (let i = 65; i <= 74; i++) {
+            student.push(String.fromCharCode(i));
+        }
+        function random(arr, n = 1) {
+            let ran, i;
+            for (i = 0; i < n; i++) {
+                ran = Math.floor(Math.random() * arr.length);
+                console.log(`random ${ran} is ${arr[ran]}`);
+                arr.splice(ran, 1);
+                console.log(arr);
+            };
+        }
+        console.log(`10 students is ${student}`);
+        random(student, 4);
+
+        // function rand(range) {
+        //     return Math.floor(Math.random() * range);
+        // }
+
+        function randomAlgorithm(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]]
+            }
+        }
+
+        console.log(randomAlgorithm(student));
+
+        // --------------------------------------------------------------------
+
+
+        // let test = [];
+
+        // function arrBirth(blankArr, n) {
+        //     let a, b;
+        //     a = Math.floor(n / 26);
+        //     b = n % 26;
+
+        // 26 A~Z
+
+        // 52 A - Z + AA - AZ
+
+        // 78 A - Z +
+        //     AA - AZ +
+        //     BA - BZ
+
+        // let index = 0;
+        // for (let i = 0; i < a; i++) {
+        //     index = 0;
+        //     for (let j = 65; j < 91 - b; j++) {
+        //         blankArr[index] = String.fromCharCode(j);
+        //         index++;
+        //     }
+        // }
+
+
+        // // 
+        // let index = 0;
+        // for (let i = 0; i <= a; i++) {
+        //     for (let j = 0; j < 26 * i; j++) {
+
+        //     };
+        //     for (let j = 0; j < b; j++) {
+
+        //     };
+        //     index = 0;
+        //     for (let j = 65; j < 91 - b; j++) {
+        //         blankArr[index] = String.fromCharCode(j);
+        //         index++;
+        //     }
+        // };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // for (let j = 65; j < 64 + b; j++) {
+        //     // blankArr.push(String.fromCharCode(j));
+        // };
+        // let func = (name, maxValue, b = 0) => {
+        //     for (i = 65; i < maxValue + b; i++) {
+        //         blankArr.push(name + String.fromCharCode(i));
+        //     };
+        // }
+        // if (n <= 26) {
+        //     func('', 64, n);
+        //     for (i = 65; i < 64 + n; i++) {
+        //         blankArr.push(String.fromCharCode(i));
+        //     };
+        // } else {
+        //     func('', 91, 0);
+        //     for (i = 65; i < 91; i++) {
+        //         blankArr.push(String.fromCharCode(i));
+        //     };
+        //     switch (a) {
+        //         case 2:
+        //             for (i = 65; i < 65 + b; i++) {
+        //                 blankArr.push('A' + String.fromCharCode(i));
+        //             };
+        //             break;
+        //         case 3:
+        //             for (i = 65; i < 91; i++) {
+        //                 blankArr.push('A' + String.fromCharCode(i));
+        //             };
+        //             for (i = 65; i < 65 + b; i++) {
+        //                 blankArr.push('B' + String.fromCharCode(i));
+        //             };
+        //             break;
+        //         case 4:
+        //             for (i = 65; i < 91; i++) {
+        //                 blankArr.push('A' + String.fromCharCode(i));
+        //             };
+        //             for (i = 65; i < 91; i++) {
+        //                 blankArr.push('B' + String.fromCharCode(i));
+        //             };
+        //             for (i = 65; i < 65 + b; i++) {
+        //                 blankArr.push('C' + String.fromCharCode(i));
+        //             };
+        //             break;
+        //     };
+        // };
+        // }
+
+        // arrBirth(test, 80);
+        // console.log(test);
+
+        let ggg = (n) => {
+            let arr = [];
+            let ans1 = 0;
+            let ans2 = 0;
+            let str = '';
+            for (let i = 0; i < n; i++) {
+                str = '';
+                ans1 = Math.floor(i / 26);
+                ans2 = i % 26;
+                if (ans1 > 0) {
+                    str = String.fromCharCode(65 + ans1 - 1);
+                }
+                str += String.fromCharCode(65 + ans2);
+                arr.push(str);
+            }
+            console.log('33test:', arr)
+            return arr;
+        }
+        let q = ggg(125);
+
+        function arrAdd(n) {
+            let test = [];
+            let a, b, c;
+            a = Math.ceil(n / 26);
+            b = n % 26;
+            c = (n - 26 - b) / 26;
+            let bigKey = "";
+            if (n <= 26) {
+                for (let i = 65; i < 65 + n; i++) {
+                    test.push(String.fromCharCode(i));
+                }
+            } else {
+                for (let i = 65; i <= 90; i++) {
+                    test.push(String.fromCharCode(i));
+                }
+                for (let i = 0; i < c; i++) {
+                    bigKey = String.fromCharCode(65 + i);
+                    for (let i = 0; i < 26; i++) {
+                        test.push(bigKey + String.fromCharCode(65 + i));
+                    }
+                }
+                bigKey = String.fromCharCode(63 + a);
+                for (let i = 0; i < b; i++) {
+                    test.push(bigKey + String.fromCharCode(65 + i));
+                };
+            }
+            console.log(test);
+            return test;
+        }
+        let w = arrAdd(250);
+
+        for (let i = 0; i < 125; i++) {
+            if (q[i] != w[i]) {
+                console.log('error:', i, 'q:', q[i], 'w:', w[i])
+                break;
+            }
+        }
+        console.log('correct')
+
+
+
+
+
+    </script>
+</body>
+
+</html>

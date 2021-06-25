@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .py-2 {
+            padding: 10px;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="py-2">
+        <button id="go">go</button>
+        <button id="back">back</button>
+    </div>
+    <div class="box"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        let go = document.querySelector('#go');
+        let back = document.querySelector('#back');
+        gsap.from('.box', {
+            duraction: 1,
+            x: -100,
+            opacity: 0
+        })
+        go.addEventListener('click', function(){
+            gsap.to('.box', 
+            {
+                duration: 1,
+                x: 100,
+                ease: 'bounce'
+            });
+        })
+        back.addEventListener('click', function(){
+            gsap.to('.box', 
+            {
+                duration: 1,
+                x: 0,
+                ease: 'bounce'
+            });
+        })
+    </script>
+</body>
+
+</html>

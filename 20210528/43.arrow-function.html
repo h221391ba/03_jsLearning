@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function</title>
+</head>
+<body>
+    
+    <script>
+        // function sayHello(name){
+        //     return "Hello, "+name
+        // }
+        // var sayHello=function(name){
+
+        // }
+        // var sayHello=(name)=>{
+        //     return "Hello, "+name
+        // }
+        //只有一行陳述式可以拿掉 {}
+        // var sayHello=(name)=>"Hello, "+name
+        //只有一個參數時 () 可以省略
+        var sayHello=name=>"Hello, "+name
+
+
+        console.log(sayHello("John"))
+        console.log(sayHello("Tom"))
+
+
+        var name="Tom"
+        var user={
+            name: "Sarah",
+            callName: function(){
+                console.log(this.name)
+            },
+            callName2: ()=>{
+                console.log(this.name)
+            }
+        }
+        user.callName()
+        user.callName2()
+
+    </script>
+</body>
+</html>

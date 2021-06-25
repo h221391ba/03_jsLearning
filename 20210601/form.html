@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        .py-2{
+            padding: 10px 0;
+        }
+        .btn{
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgb(19, 122, 207);
+            color: #fff;
+            cursor: default;
+        }
+        .btn:hover{
+            background: rgb(13, 91, 155);
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="form" action="target.html" method="GET"> <!--get-->
+        <div class="py-2">
+            <label for="account">帳號</label>
+            <input type="text" id="account" name="account" >
+        </div>
+        <div class="py-2">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" >
+        </div>
+        <div class="py-2">
+            <label for="password">輸入密碼</label>
+            <input type="password" id="password" name="password" >
+        </div>
+        <div class="py-2">
+            <label for="rePassword">再次輸入密碼</label>
+            <input type="password" id="rePassword" name="rePassword" >
+        </div>
+        <div class="py-2">
+            <input type="checkbox" id="agree" value="yes"> <label for="agree">我同意使用者條款</label>
+        </div>
+        <div class="py-2">
+            <div class="error" id="error"></div>
+        </div>
+        <!-- <button id="send" type="submit">send</button> -->
+        <a role="button" id="send" class="btn">send</a>
+    </form>
+    <script>
+        const emailReg=/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+        const send=document.querySelector("#send")
+        const form=document.querySelector("#form")
+        const account=document.querySelector("#account")
+        const email=document.querySelector("#email")
+        const password=document.querySelector("#password")
+        const rePassword=document.querySelector("#rePassword")
+        const agree=document.querySelector("#agree")
+
+        send.addEventListener("click", function(){
+            let errorMsg="";
+            let accountValue=account.value;
+            let emailValue=email.value;
+            let passwordValue=password.value;
+            let rePasswordValue=rePassword.value;
+            let ifAgree=agree.checked;
+            if(accountValue===""){
+                errorMsg="請輸入帳號";
+            }
+            if(emailValue===""){
+                errorMsg="請輸入 eamil";
+            }
+            if(!emailReg.test(emailValue)){
+                errorMsg="請輸入正確的 eamil 格式";
+            }
+            if(passwordValue===""){
+                errorMsg="請輸入密碼";
+            }
+            if(rePasswordValue!==passwordValue){
+                errorMsg="兩個密碼不一致"
+            }
+            if(!ifAgree){
+                errorMsg="請同意使用者條款"
+            }
+            error.innerText=errorMsg;
+            if(errorMsg===""){
+                form.submit()
+            }
+            // form.submit()
+        })
+    </script>
+</body>
+</html>

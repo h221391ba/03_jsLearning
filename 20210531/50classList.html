@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        }
+
+        .box.active{
+            background: red;
+            border-radius: 20px;
+        }
+
+        .box.move {
+            transform: translateY(100px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="getClass">get class</button>
+        <button id="addClass">add class</button>
+        <button id="removeClass">remove class</button>
+        <button id="toggleClass">toggle class</button>
+        <button id="toggleMove">toggle Move</button>
+        <div class="box" id="box"></div>
+    </div>
+    <script>
+        let getClass = document.querySelector('#getClass');
+        let addClass = document.querySelector('#addClass');
+        let toggleClass = document.querySelector('#toggleClass');
+        let toggleMove = document.querySelector('#toggleMove');
+        
+        let removeClass = document.querySelector('#removeClass');
+        let box = document.querySelector('#box');
+
+        getClass.addEventListener('click', function(){
+            let className = box.classList;
+            console.log(className);
+        });
+
+        addClass.addEventListener('click', function(){
+            box.classList.add('active');
+        });
+
+        removeClass.addEventListener('click', function(){
+            box.classList.remove('active', 'move');
+        });
+
+        toggleClass.addEventListener('click', function(){
+            box.classList.toggle('active');
+        });
+
+        toggleMove.addEventListener('click', function(){
+            box.classList.toggle('move');
+        });
+
+        box.addEventListener('click', function(){
+            let ifActive = this.classList.contains('active')
+            console.log(ifActive);
+            if (ifActive) alert('error message!!');
+        });
+
+    </script>
+</body>
+</html>

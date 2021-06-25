@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tree</title>
+    <style>
+        li.first {
+            background: lightblue;
+        }
+
+        li.last {
+            background: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>parent, child</h2>
+    <div title="titleWrap">
+        <div class="box" id="box" title="box"><img src="pic1.jpg" alt=""></div>
+    </div>
+    <h2>first child, last child</h2>
+    <ul>
+        <!-- 有空白的化程式碼會失效所以才這樣排,之後有jquery就有更好的方式可以用 -->
+        <li>item 1</li><li>item 2</li><li id="item">item 3</li><li>item 4</li>
+    </ul>
+    <script>
+        let box = document.querySelector("#box")
+        let titleWrap = box.parentNode.title;
+        console.log(titleWrap)
+        let img = box.childNodes[0].src;
+        console.log(img)
+
+        let startItem = document.querySelector('ul')
+        let firstChild = startItem.firstChild;
+        let lastChild = startItem.lastChild;
+        firstChild.className = "first"
+        lastChild.className = "last"
+
+        let targetItem = document.querySelector("#item")
+        targetItem.previousSibling.className = "first";
+        targetItem.nextSibling.className = "last";
+
+    </script>
+</body>
+
+</html>

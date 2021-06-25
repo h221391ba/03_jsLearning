@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 3;  //傳值
+        let b = a;
+        console.log(a, b);
+        a = 2;
+        console.log(a, b);
+
+        let c = {
+            greeting: 'hi',
+        };
+        let d = c;
+        console.log(c, d);  //傳址
+
+        d.greeting = 'Hello';
+        console.log(c, d);
+    </script>
+</body>
+</html>

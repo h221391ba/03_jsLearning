@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .py-2 {
+            padding: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: royalblue;
+            color: white;
+
+        }
+        .error {
+            height: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <form id="form" action="target.html" method="get"> <!--get 顯示資料變數帶入網址  post 資料不可見 需要後端來接住資料-->
+        <div class="py-2">
+            <label for="">account</label>
+            <input type="text" id="account" name="account">
+        </div>
+        <div class="py-2">
+            <label for="email">e-mail</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="py-2">
+            <label for="password">密碼</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="py-2">
+            <label for="rePassword">再次輸入密碼</label>
+            <input type="rePassword" id="rePassword" name="rePassword">
+        </div>
+        <div class="py-2">
+            <div class="error" id="error"></div>
+        </div>
+        <!-- <button id="send" type="submit">submit</button> -->
+        <a role="button" href="" id="send" class="btn">send</a>
+    </form>
+
+    <script>
+        let send = document.querySelector('#send')
+        let form = document.querySelector('#form')
+        let account = document.querySelector('#account')
+        let error = document.querySelector('#error')
+
+        send.addEventListener('click', function(){
+            let errorMsg = '';
+            let accountValue = account.value;
+            let emailValue = email.value;
+            if(accountValue === '') errorMsg = '請輸入帳號';
+            if(emailValue === '') errorMsg = '請輸入email';
+            error.innerText = errorMsg;
+            // form.submit();
+        });
+    </script>
+</body>
+</html>

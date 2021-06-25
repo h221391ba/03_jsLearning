@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <!-- <button type="button" onclick="showMsg()">button</button> -->
+    <button id="call" type="button">button</button>
+    <button id="remove" type="button">remove event</button>
+    <h1>Hello world</h1>
+    <input type="text" id="input">
+    <script>
+        // function showMsg(){
+        //     console.log("hello")
+        // }
+
+        let btn=document.querySelector("#call")
+        let remove=document.querySelector("#remove")
+        let h1=document.querySelector("h1")
+        let input=document.querySelector("#input")
+        //dom0 級事件處理方式
+        // btn.onclick=function(){
+        //     console.log("dom0 click")
+        // }
+        // btn.onclick=function(){
+        //     console.log("second binding")
+        // }
+        // remove.onclick=function(){
+        //     btn.onclick=null;
+        // }
+
+        // dom2級事件處理 mouseenter, mouseleave
+        function showMsg(){
+            console.log("dom2 click")
+            h1.innerText="New content"
+        }
+        btn.addEventListener("click", showMsg)
+        btn.addEventListener("click", function(){
+            console.log("second binding")
+            h1.innerText="Hello world"
+        })
+        // btn.addEventListener("mouseleave", function(){
+        //     console.log("dom2 mouseleave")
+        // })
+        // remove.addEventListener("click", function(){
+        //     btn.removeEventListener("click", showMsg)
+        // })
+        input.addEventListener("change", function(){
+            console.log("change")
+        })
+        input.addEventListener("keyup", function(){
+            console.log("keyup")
+        })
+    </script>
+</body>
+</html>

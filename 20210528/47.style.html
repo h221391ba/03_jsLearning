@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>style</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            /* background: pink; */
+            transition: .4s;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <button id="toggleColor">toggleColor</button>
+    <button id="extend">extend</button>
+
+    <div class="box" style="background: pink"></div>
+    <script>
+        let box=document.querySelector(".box")
+        let btn=document.querySelector("#btn")
+        let extend=document.querySelector("#extend")
+        let toggleColor=document.querySelector("#toggleColor")
+        box.addEventListener("click", function(e){
+            let bgColor=this.style.background;
+            console.log(bgColor)
+        })
+        btn.addEventListener("click", function(){
+            box.style.background="red";
+        })
+        toggleColor.addEventListener("click", function(){
+            let color=box.style.background;
+            if(color==="red"){
+                box.style.background="pink";
+            }else{
+                box.style.background="red";
+            }
+        })
+        extend.addEventListener("click", function(){
+            let width=box.clientWidth;
+            console.log(width)
+            
+            width+=10;
+            console.log(width)
+            box.style.width=width+"px";
+        })
+    </script>
+</body>
+</html>

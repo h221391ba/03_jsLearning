@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop</title>
+</head>
+<body>
+    
+    <script>
+        //1~10
+        // console.log(1)
+        // console.log(2)
+        let i=1;
+        while(i<=10){
+            console.log("i", i)
+            i++;
+        }
+
+        let j=1;
+        do{
+            console.log("j", j)
+            j++
+        }
+        while(j<=10)
+
+        //1+2...+10 
+        let total=0;
+        for(let k=1; k<=100; k++){
+            // console.log("k", k)
+            // total=total+k;
+            total+=k;
+        }
+        console.log(total)
+
+        let users=["John", "Tom", "May", "Sam", "Sandy"];
+        let fruit=["apple", "banana", "peach", "orange", "melon"];
+        for(let n=0; n<fruit.length; n++){
+            console.log(`${users[n]} likes ${fruit[n]}.`)
+            // console.log(fruit[n])
+        }
+
+        for(let a=2, b=3; a<7; a++, b+=2){
+            console.log(`${a}+${b}=${a+b}`)
+        }
+
+        for(let x=0; x<7; x++){
+            console.log("x", x)
+            for(let y=0; y<7; y++){
+                console.log("y", y)
+            }
+        }
+
+    </script>
+</body>
+</html>

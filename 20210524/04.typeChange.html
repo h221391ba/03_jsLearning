@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type change</title>
+</head>
+<body>
+    
+    <script>
+        let num=1;
+        console.log(num)
+
+        //數字變字串
+        num.toString();
+        console.log(num.toString())
+        let arr=[1,2,3];
+        console.log(arr)
+
+        //陣列變字串
+        console.log(arr.toString())         //log 1,2,3
+
+
+
+        let inputValue="222.2222v222";
+        console.log(inputValue)
+
+        //字串變成數字 字串裡面必須皆為數字否則無法轉換
+        console.log(Number(inputValue))     // log NaN    not a number
+
+        //自動去除非數字的字元,只會顯示整數
+        console.log(parseInt(inputValue))
+
+        //自動去除非數字的字元,會顯示小數但非數字以下不顯示
+        console.log(parseFloat(inputValue))
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+        function countBmi(name, height = 0, weight = 0){
+            if (height === 0){
+                console.log("身高不能為0")
+                return;
+            }
+            // let height = 170, weight = 60;
+            height /= 100;
+            let bmi = weight / (height**2);
+            bmi = Math.round(bmi * 100) / 100;
+            let str = "";
+            if (bmi < 18.5){
+                str = "過輕"
+                console.log("過輕");
+            }else if (bmi >= 18.5 && bmi < 24 ){
+                str = "正常"
+                console.log("正常");
+            }else if (bmi >= 24 && bmi < 27){
+                str = "過胖"
+                console.log("過胖");
+            }else if (bmi >= 27 && bmi < 30){
+                str = "輕度肥胖"
+                console.log("輕度肥胖");
+            }else if (bmi >= 30 && bmi < 35){
+                str = "中度肥胖"
+                console.log("中度肥胖");
+            }else{
+                str = "重度肥胖"
+                console.log("重度肥胖");
+            };
+            console.log(`${name} 的BMI是${bmi} ,標準是${str}`);
+        }
+
+        countBmi("Shen", 0, 83);
+    </script>
+</body>
+</html>

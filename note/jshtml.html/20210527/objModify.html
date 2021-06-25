@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let users = [
+            {
+                name: "Tom",
+                age: 19,
+                email: "ton@test.com",
+                gender: "male",
+                favorite: "apple"
+            },
+            {
+                name: "May",
+                age: 14,
+                email: "may@test.com",
+                gender: "female",
+                favorite: "banana"
+            },
+            {
+                name: "Joe",
+                age: 22,
+                email: "joe@test.com",
+                gender: "male",
+                favorite: "banana"
+            },
+            {
+                name: "Amy",
+                age: 26,
+                email: "amy@test.com",
+                gender: "female",
+                favorite: "melon"
+            }
+        ];
+
+        users.forEach(function(user){
+            console.log(`${user.name}'s age is ${user.age}.`);
+        })
+
+        let  userAdault = [];
+
+        users.forEach(function(user, index){
+            // if (user.age >= 18) userAdault.push(user);
+            console.log(`${index}. ${user.name}'s`);
+        });
+        console.log(userAdault);
+
+
+        //filter用法 所有符合條件的全部回傳
+        let userAdaultList = users.filter(function(user){
+            return user.age >= 18;
+        })
+        console.log(userAdaultList);
+
+        let userMaleList = users.filter(function(user){
+            return user.gender === 'male';
+        });
+        console.log(userMaleList);
+
+        //find 找到第一個值回傳 找不到會回傳 undefind. 判斷是否有符合的資料 如資料內是否有18歲以上的人...
+        let userFindMale = users.find(function(user){
+            return user.gender === 'male';
+        })
+        console.log(userFindMale);
+
+        //map 原始陣列轉換 陣列內的東西抓出來更改再丟回去
+        let A = [10, 40, 30, 36, 72];
+        // let B = [];
+        let B = A.map(function(item){
+            return  item*2;
+        });
+        console.log(B);
+
+
+        let userLike = users.map(function(user){
+            return `${user.name} likes ${user.favorite}`;
+        })
+        console.log(userLike);
+
+        //every 全部符合條件 回傳true 如果不是全部符合則回傳false
+        let arr = [11, 34,51, 23];
+        let isBigThen10 = arr.every(function(item){
+            return item >= 10;
+        });
+        console.log(isBigThen10);
+    </script>
+</body>
+</html>

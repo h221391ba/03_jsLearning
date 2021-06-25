@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //物件轉為字串
+        let users = [
+            {
+                name: "Tom",
+                age: 19,
+                email: "ton@test.com",
+                gender: "male",
+                favorite: "apple"
+            },
+            {
+                name: "May",
+                age: 14,
+                email: "may@test.com",
+                gender: "female",
+                favorite: "banana"
+            }
+        ];
+
+        console.log(users)
+        //web storage
+        //前後端資料傳遞
+        //資料傳遞儲存
+        //資料物件以json 字串檔儲存傳遞
+        let userString = JSON.stringify(users);
+        console.log(userString);
+        //將字串變回物件
+        let userJson = JSON.parse(userString);
+        console.log(userJson);
+    </script>
+</body>
+</html>

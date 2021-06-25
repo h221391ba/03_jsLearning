@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    
+    <script>
+        // var count=0;
+        // function counter(){
+        //     return ++count;
+        // }
+        // console.log(counter())
+        // console.log(counter())
+        // console.log(counter())
+
+        // function counter(){
+        //     var count=0;
+        //     function innerCounter(){
+        //         return ++count;
+        //     }
+        //     return innerCounter;
+        // }
+        // function counter(){
+        //     var count=0;
+        //     return function(){
+        //         return ++count;
+        //     }
+        // }
+        // var countFunc=counter();
+        // console.log(countFunc())
+        // console.log(countFunc())
+        // console.log(countFunc())
+        //減少全域變數的數量
+        // let catCount=0;
+        // let dogCount=0;
+        function dogHouse(){
+            var count=0;
+            // dogCount++;
+            return function(){
+                count++;
+                console.log(count + ' dogs.')
+            }
+        }
+        function catHouse(){
+            var count=0;
+            return function(){
+                count++;
+                console.log(count + ' cats.')
+            }
+        }
+
+        let countDogs=dogHouse()
+        let countCats=catHouse()
+
+        // countDogs()
+        // countDogs()
+        // countCats()
+        // countCats()
+
+        function dogHouseType(name){
+            var count=0;
+            return function(){
+                count++;
+                console.log(count + " " + name)
+            }
+        }
+        var countGolden=dogHouseType('Golden')
+        var countPug=dogHouseType('Pug')
+
+        countGolden();
+        countGolden();
+        countPug();
+        countPug();
+
+    </script>
+</body>
+</html>

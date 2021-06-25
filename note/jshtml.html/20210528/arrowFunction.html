@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sayHello(name) {
+            return 'Hello ' + name;
+        }
+        console.log(sayHello('tom'));
+        console.log(sayHello('john'));
+
+        let sayHello2 = (name) => {
+            return 'Hello ' + name;
+        }
+        console.log(sayHello2('tom'));
+        console.log(sayHello2('john'));
+
+        
+        //一行陳述式 連return都可以省
+        let sayHello3 = (name) => 'Hello ' + name;
+
+        console.log(sayHello3('tom'));
+        console.log(sayHello3('john'));
+
+        //一行陳述式 連return都可以省 只有一個參數就可以連括號省略
+        let sayHello4 = name => 'Hello ' + name;
+
+        let name = 'tom';
+        let user = {
+            name: 'sarah',
+            callName: function() {
+                console.log(this.name);
+            }
+            callName2: () => {
+                console.log(this.name);
+            }
+        };
+        user.callName();
+
+    </script>
+</body>
+
+</html>
